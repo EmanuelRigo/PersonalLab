@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import MainPersonal from "@/components/PersonalPageComponents/Main";
+import Aside from "@/components/PersonalPageComponents/Aside";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +25,25 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+         <div
+      className="flex h-screen overflow-hidden"
+      style={{
+        backgroundImage: "url('/image4.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="relative w-4/6 flex items-center justify-start">
+        <main className="flex h-full w-3/5">
+          <div className="flex flex-col items-center bg-white w-full ">
+          <MainPersonal></MainPersonal>
+          </div>
+        </main>
+        <Aside />   
+       
+      </div>
+    {children}
+    </div>
       </body>
     </html>
   );
