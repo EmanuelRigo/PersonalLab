@@ -114,7 +114,7 @@ const Formulario = () => {
         </div>
         <div className="text-right">
           <Link 
-           href={"/personal-page?section=clinical-analysis"}
+           href={"/?section=clinical-analysis"}
             className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors duration-200"
           >
             Siguiente

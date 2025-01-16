@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <div className="w-2/6 h-full bg-red flex items-center justify-end animate-slide">
       <div className="bg-sky-700 bg-opacity-70 text-white h-4/6 p-6 rounded-s-md shadow-md w-full relative">
-        <Link href="/personal-page" className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-200">
+        <Link href="/" className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors duration-200">
           <FaTimes className="text-2xl" />
         </Link>
         <h2 className="text-2xl font-bold mb-4">Ubicación</h2>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Login = () => {
@@ -9,6 +10,8 @@ const Login = () => {
     password: "",
   });
 
+  const router = useRouter();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -16,15 +19,19 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Navigate to ?section=patient-form
+    router.push(`/?section=patient-form`);
+
     console.log(formData);
   };
 
   return (
-    <div className="max-w-md mx-auto mt-6 p-6 bg-white shadow-md rounded-lg">
+    <div className="max-w-md mx-auto mt-6 p-6 w-full min-h-96 bg-white ">
       <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form  onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-gray-700">Email</label>
+          <label className="block text-gray-700">Usuario</label>
           <input
             type="email"
             name="email"
@@ -35,7 +42,7 @@ const Login = () => {
           />
         </div>
         <div>
-          <label className="block text-gray-700">Password</label>
+          <label className="block text-gray-700">Contraseña</label>
           <input
             type="password"
             name="password"
@@ -47,16 +54,11 @@ const Login = () => {
         </div>
         <div className="text-right">
           <button
-            type="submit"
-            className="bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700 transition-colors duration-200"
+           
+            className="bg-sky-600 text-white w-full px-4 py-2 rounded hover:bg-sky-700 transition-colors duration-200"
           >
             Login
           </button>
-        </div>
-        <div className="text-center">
-          <Link href="/register" className="text-sky-600 hover:underline">
-            ¿No tienes una cuenta? Regístrate
-          </Link>
         </div>
       </form>
     </div>
